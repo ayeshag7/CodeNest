@@ -3,12 +3,12 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB5tF5jx7RcFotGYi5sibTMHi6mr2iDzZs",
-  authDomain: "diginote-c48de.firebaseapp.com",
-  projectId: "diginote-c48de",
-  storageBucket: "diginote-c48de.appspot.com",
-  messagingSenderId: "609614108235",
-  appId: "1:609614108235:web:dd96aeb23f6984241b9fce"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
