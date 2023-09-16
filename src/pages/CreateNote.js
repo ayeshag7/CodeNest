@@ -3,7 +3,7 @@ import { db, auth } from "../firebase/firebaseConfig";
 import { useNavigate } from 'react-router-dom';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
-export const CreateNote = () => {
+export const CreateNote = ({toggle, setToggle}) => {
 
   const navigate = useNavigate();
   const collectionRef = collection(db, "Notes");
@@ -21,6 +21,7 @@ export const CreateNote = () => {
       createdAt: serverTimestamp()
     }
     await addDoc(collectionRef, noteData);
+    setToggle(!toggle)
     navigate("/")
   }
 
