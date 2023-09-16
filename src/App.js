@@ -1,14 +1,15 @@
 import './App.css';
 import { Header } from './components/Header';
 import { AllRoutes } from './routes/AllRoutes';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
     <>
-      <div className="App relative">
-        <div className="gradient absolute inset-0 z-0"></div>
+      <div className="App">
         <Header />
         <AllRoutes />
+        <Footer />
       </div>
     </>
   );

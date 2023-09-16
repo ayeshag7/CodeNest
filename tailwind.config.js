@@ -7,7 +7,8 @@ module.exports = {
         'in-w': '680px'
       },
       colors: {
-        'notePink': '#ff6b6b'
+        'notePink': '#ff6b6b',
+        'lightGrey': '#F1F5F9'
       }
     },
   },
