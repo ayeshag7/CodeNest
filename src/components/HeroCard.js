@@ -2,7 +2,7 @@ import React from 'react';
 
 export const HeroCard = () => {
   return (
-    <div className='mb-10'>
+    <div className='mb-16 md:mb-10'>
         <h1 className="text-3xl md:text-5xl font-extrabold text-center">
             Discover & Share
             <br />

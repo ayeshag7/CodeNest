@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { auth, provider } from "../firebase/firebaseConfig";
 import { signInWithPopup, signOut } from 'firebase/auth';
 
-export const Header = ({toggle, setToggle}) => {
+export const Header = () => {
 
   const white_btn = "text-base rounded md:border md:border-black md:rounded-xl px-2 py-1.5 hover:bg-gray-200 md:hover:bg-gray-700 md:hover:text-white";
   const blk_btn = "text-base text-black md:text-white rounded hover:bg-gray-200 md:border md:border-black md:bg-gray-700 md:rounded-xl px-2 py-1.5 hover:bg-white hover:text-black";
