@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useToggle } from '../context/ToggleContext';
 import logo from "../assets/images/diginote (1).png";
 import { Link } from 'react-router-dom';
 import { auth, provider } from "../firebase/firebaseConfig";
@@ -11,13 +12,16 @@ export const Header = ({toggle, setToggle}) => {
   const [hidden, setHidden] = useState(false);
 
   // Login and Logout Handling
+
+  const { toggleState } = useToggle();
+
   const [isLoggedIn, setLoggedIn] = useState( JSON.parse(localStorage.getItem("isLoggedIn")) || false);
 
   function handleLogin() {
     signInWithPopup(auth, provider).then(() => {
       setLoggedIn(true)
       localStorage.setItem("isLoggedIn", true)
-      setToggle(!toggle)
+      toggleState();
     })
   };
 
@@ -25,7 +29,7 @@ export const Header = ({toggle, setToggle}) => {
     setLoggedIn(false)
     localStorage.setItem("isLoggedIn", false)
     signOut(auth)
-    setToggle(!toggle)
+    toggleState();
   };
 
 

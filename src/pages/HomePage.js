@@ -2,8 +2,11 @@ import { collection, getDocs } from "firebase/firestore";
 import { HeroCard, SearchBar, PostCard, RecentPostsLink } from "../components";
 import { db } from "../firebase/firebaseConfig";
 import { useEffect, useState } from "react";
+import { useToggle } from "../context/ToggleContext";
 
-export const HomePage = ({toggle, setToggle}) => {
+export const HomePage = () => {
+
+  const {toggle} = useToggle();
 
   const [notes, setNotes] = useState([]);
 
@@ -17,6 +20,11 @@ export const HomePage = ({toggle, setToggle}) => {
           ...document.data(),
           id: document.id,
         }));
+        notes.map((note) => {
+          const timeStamp = note["createdAt"]
+          note["createdAt"] = timeStamp.toDate().toLocaleString();
+          return note
+        });
         setNotes(notes);
       } catch (error) {
         console.error('Error fetching documents:', error);
@@ -35,7 +43,7 @@ export const HomePage = ({toggle, setToggle}) => {
       
       <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-12 z-10">
           {notes.map((note) => {
-            return <PostCard key={note.id} note={note} toggle={toggle} setToggle={setToggle}/>
+            return <PostCard key={note.id} note={note}/>
           })}
       </div>
 
