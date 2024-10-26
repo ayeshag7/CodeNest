@@ -17,6 +17,8 @@ CodeNest is a note sharing web app built with React JS, Tailwind CSS, and Fireba
 * View notes from all the other users.
 * Sign out.
 
+## Preview
+![image](https://github.com/user-attachments/assets/5730356f-c959-413a-b0c5-abc5ec539311)
 
-## Project Overview
+## Website's Link
 https://codenest.netlify.app/
